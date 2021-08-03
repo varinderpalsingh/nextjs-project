@@ -1,0 +1,12 @@
+version: "3.0"
+services:
+  nextjs:
+    ports:
+      - 8080:8080
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/var/nextjs/app
+      - /var/nextjs/app/node_modules
+      - /var/nextjs/app/.next
