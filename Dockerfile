@@ -17,7 +17,7 @@ COPY . /var/nextjs/app
 
 # Building app
 RUN npm run build
-EXPOSE 8080
+EXPOSE 3000
 
 # Running the app
 CMD "npm" "run" "start_prod"
