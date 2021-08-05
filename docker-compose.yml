@@ -6,6 +6,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      image: nextjs-new:tag
     volumes:
       - ./:/var/nextjs/app
       - /var/nextjs/app/node_modules
