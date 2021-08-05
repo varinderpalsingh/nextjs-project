@@ -20,11 +20,12 @@ RUN npm run build
 EXPOSE 3000
 
 # Running the app
-CMD "npm" "run" "start_prod"
+#CMD "npm" "run" "start_prod"
 
 
 FROM node:16-alpine
-WORKDIR /var/nextjs/app    
+WORKDIR /app    
 COPY --from=builder /var/nextjs/app /app  
-CMD ["npm", "run", "docker-start"]
+# Running the app
+CMD "npm" "run" "start_prod"
 
