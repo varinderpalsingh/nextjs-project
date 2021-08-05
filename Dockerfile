@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:16-alpine
 
 ENV PORT 3000
 
@@ -21,4 +21,10 @@ EXPOSE 3000
 
 # Running the app
 CMD "npm" "run" "start_prod"
+
+
+FROM node:16-alpine
+WORKDIR /var/nextjs/app    
+COPY --from=builder /var/nextjs/app /app  
+CMD ["npm", "run", "docker-start"]
 
