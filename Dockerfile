@@ -22,7 +22,3 @@ EXPOSE 3000
 # Running the app
 CMD "npm" "run" "start_prod"
 
-FROM node:12
-WORKDIR /var/nextjs/app
-COPY --from=builder . /var/nextjs/app
-CMD ["npm", "run", "docker-start"]
